@@ -1,12 +1,16 @@
 {
   "name": "docker-compose-parser",
   "version": "0.0.1",
-  "description": "",
+  "description": "Parse and edit docker-compose.yaml file using easy to use methods.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "engines" : { 
+    "npm" : ">=8.0.0",
+    "node" : ">=16.0.0"
+  },
+  "keywords": ["docker", "docker-compose", "yaml", "parser", "json", "editor"],
   "author": "",
-  "license": "ISC"
+  "license": "MIT"
 }
