@@ -14,9 +14,9 @@ Parse and edit `docker-compose.yaml` file using easy to use methods.
 
 ### Parsing
 
-* Parsing a docker-compose.yml file
-* Parsing docker compose file string
-* Parsing docker compose file object
+* [Parsing a docker-compose.yml file](#-parsing-a-docker-composeyml-file)
+* [Parsing docker compose file string](#-parsing-a-docker-compose-string)
+* [Parsing docker compose file object](#-parsing-an-existing-docker-compose-object)
 
 
 #### 🔥 Parsing a `docker-compose.yml` file
