@@ -4,6 +4,11 @@ Parse and edit `docker-compose.yaml` file using easy to use methods.
 
 ---
 
+## Installation
+
+    npm install docker-compose-parser --save
+
+
 ## Usage
 
 
