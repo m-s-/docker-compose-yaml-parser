@@ -11,13 +11,15 @@ Parse and edit `docker-compose.yaml` file using easy to use methods.
 
 ## Usage
 
-
-### Parsing
-
 * [Parsing a docker-compose.yml file](#-parsing-a-docker-composeyml-file)
 * [Parsing docker compose file string](#-parsing-a-docker-compose-string)
 * [Parsing docker compose file object](#-parsing-an-existing-docker-compose-object)
+* [Get docker compose object output](#-get-the-final-resulting-docker-compose-object)
+* [Get docker compose YAML string output](#-get-the-final-resulting-docker-compose-yaml-string)
+* [Writing to file](#-writing-to-docker-composeyml-file)
 
+
+### Parsing
 
 #### 🔥 Parsing a `docker-compose.yml` file
 
@@ -70,7 +72,7 @@ const dockerComposeObj = {
         }
 }
 
-// create Parser instance from string
+// create Parser instance from a JSON object
 const compose = Parser.parse(dockerComposeObj);
 ```
 
