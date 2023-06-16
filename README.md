@@ -16,7 +16,7 @@ Parse and edit `docker-compose.yaml` file using easy to use methods.
 * [Parsing docker compose file object](#-parsing-an-existing-docker-compose-object)
 * [Get docker compose object output](#-get-the-final-resulting-docker-compose-object)
 * [Get docker compose YAML string output](#-get-the-final-resulting-docker-compose-yaml-string)
-* [Writing to file](#-writing-to-docker-composeyml-file)
+* [Writing output to file](#-writing-to-docker-composeyml-file)
 
 
 ### Parsing
@@ -30,7 +30,7 @@ import Parser from 'docker-compose-parser'
 const compose = new Parser("./path/to/docker-compose.yml");
 
 // Make modifications
-compose.getService().getImage().setName('test').setTag('1.2.3')
+compose.getService().getImage().setName('test').setTag('1.2.3');
 
 // Write to file
 compose.writeToFile("./output/docker-compose.yml");
@@ -91,10 +91,10 @@ const compose = Parser.parse(dockerComposeObj);
 const compose = new Parser("./path/to/docker-compose.yml");
 
 // Make modifications
-compose.getService().getImage().setName('test').setTag('1.2.3')
+compose.getService().getImage().setName('test').setTag('1.2.3');
 
 // get resulting object
-console.log(compose.json())
+console.log(compose.json());
 
 // Output:
 /*
@@ -125,10 +125,10 @@ console.log(JSON.stringify(compose.json()))
 const compose = new Parser("./path/to/docker-compose.yml");
 
 // Make modifications
-compose.getService().getImage().setName('test').setTag('1.2.3')
+compose.getService().getImage().setName('test').setTag('1.2.3');
 
 // get resulting YAML string
-console.log(compose.text())
+console.log(compose.text());
 
 // Output:
 /*
@@ -151,9 +151,25 @@ console.log(compose.text())
 const compose = new Parser("./path/to/docker-compose.yml");
 
 // Make modifications
-compose.getService().getImage().setName('test').setTag('1.2.3')
+compose.getService().getImage().setName('test').setTag('1.2.3');
 
 // Writing to file
-compose.writeToFile('dist/docker-compose.yaml')
+compose.writeToFile('dist/docker-compose.yaml');
+
+```
+
+Or overwrite the contents of the target `docker-compose.yml` file by passing the same path to `writeToFile()`
+```javascript
+
+const file_path = "./path/to/docker-compose.yml";
+
+// create Parser instance
+const compose = new Parser(file_path);
+
+// Make modifications
+compose.getService().getImage().setName('test').setTag('1.2.3');
+
+// Writing to file
+compose.writeToFile(file_path);
 
 ```
