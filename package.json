@@ -1,7 +1,8 @@
 {
   "name": "docker-compose-parser",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Parse and edit docker-compose.yaml file using easy to use methods.",
+  "homepage": "https://github.com/WisdomSky/docker-compose-yaml-parser",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -18,10 +19,14 @@
     "json",
     "editor"
   ],
-  "author": "",
+  "author": "Julian Paolo Dayag <WisdomSky>",
   "license": "MIT",
   "type": "module",
   "dependencies": {
     "js-yaml": "^4.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/WisdomSky/docker-compose-yaml-parser.git"
   }
 }
