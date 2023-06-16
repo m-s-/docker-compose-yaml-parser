@@ -2,8 +2,8 @@
  * Copyright (c) 2023 by WisdomSky, All Rights Reserved.
  */
 
-import ComposeBase from './compose-base.js';
-import ComposeImage from './compose-image.js'
+import ComposeBase from '../include/base.js';
+import ComposeImage from './image.js'
 
 export default class ComposeService extends ComposeBase {
 

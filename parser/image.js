@@ -1,7 +1,7 @@
 /**
  * Copyright (c) 2023 by WisdomSky, All Rights Reserved.
  */
-import ComposeBase from './compose-base.js';
+import ComposeBase from '../include/base.js';
 
 export default class ComposeImage extends ComposeBase {
 
@@ -51,6 +51,10 @@ export default class ComposeImage extends ComposeBase {
         this.__data.image = this.__data.image.replace(/^((?:[^\/\:\@]+?\.[^\/\:\@]+?\/)?(?:[^\/\:\@]+(?:\/[^\/\:\@]+)?))(?:(\:|\@)([^\/\:\@]+)?)?$/, `$1@${digest}`);
 
         return this;
+    }
+
+    get() {
+        return this.__data.image;
     }
 
     toJSON() {

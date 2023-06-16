@@ -6,11 +6,22 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "engines" : { 
-    "npm" : ">=8.0.0",
-    "node" : ">=16.0.0"
+  "engines": {
+    "npm": ">=8.0.0",
+    "node": ">=16.0.0"
   },
-  "keywords": ["docker", "docker-compose", "yaml", "parser", "json", "editor"],
+  "keywords": [
+    "docker",
+    "docker-compose",
+    "yaml",
+    "parser",
+    "json",
+    "editor"
+  ],
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "js-yaml": "^4.1.0"
+  }
 }

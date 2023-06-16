@@ -1,11 +1,12 @@
 /**
  * Copyright (c) 2023 by WisdomSky, All Rights Reserved.
  */
+import fs from 'fs'
+import jsyaml from 'js-yaml'
+import ComposeBase from '../include/base.js';
+import ComposeService from './service.js'
 
-import ComposeBase from './compose-base.js';
-import ComposeService from './compose-service.js'
-
-export default class ComposeNagivator extends ComposeBase {
+export default class ComposeParser extends ComposeBase {
 
     constructor(dockerComposeObj) {
         return super(dockerComposeObj);
@@ -30,12 +31,24 @@ export default class ComposeNagivator extends ComposeBase {
         return services;
     }
 
-    get() {
+    json() {
         return this.__data;
+    }
+
+    text() {
+        return  jsyaml.dump(this.json(), { lineWidth: -1});
     }
 
     toJSON() {
         return this.__data;
+    }
+
+    writeToFile(path) {
+        try {
+            fs.writeFileSync(path, this.text());
+        } catch (e) {
+            console.log(e);
+        }
     }
 
 }
