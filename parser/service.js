@@ -4,6 +4,7 @@
 
 import ComposeBase from '../include/base.js';
 import ComposeImage from './image.js'
+import _ from "lodash";
 
 export default class ComposeService extends ComposeBase {
 
@@ -37,11 +38,60 @@ export default class ComposeService extends ComposeBase {
 
     getEnvironment() {
 
-    }   
+    }
+
+    getDeploy() {
+        return new ComposeServiceDeploy(this.__data.deploy);
+    }
 
     toJSON() {
         return Object.assign({}, this.__data, { name: this.__name});
     }
+}
 
+export class ComposeServiceDeploy extends ComposeBase {
+    constructor(deployObj) {
+        return super(deployObj ?? "");
+    }
 
+    getPlacementConstraints()
+    {
+        return this.__data.placement?.constraints;
+    }
+
+    setPlacementConstraints(constraints) {
+        _.merge(this.__data, { placement: { constraints }});
+    }
+
+    getCPULimit() {
+        return this.__data.resources?.limits?.cpus;
+    }
+
+    setCPULimit(limit) {
+        _.merge(this.__data, { resources: { limits: { cpus: limit } }});
+    }
+
+    getMemoryLimit() {
+        return this.__data.resources?.limits?.memory;
+    }
+
+    setMemoryLimit(limit) {
+        _.merge(this.__data, { resources: { limits: { memory: limit } }});
+    }
+
+    getCPUReservation() {
+        return this.__data.resources?.reservations?.cpus;
+    }
+
+    setCPUReservation(reservation) {
+        _.merge(this.__data, { resources: { reservations: { cpus: reservation } }});
+    }
+
+    getMemoryReservation() {
+        return this.__data.resources?.reservations?.memory;
+    }
+
+    setMemoryReservation(reservation) {
+        _.merge(this.__data, { resources: { reservations: { memory: reservation } }});
+    }
 }
